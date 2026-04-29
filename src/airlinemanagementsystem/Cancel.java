@@ -93,3 +93,48 @@ public class Cancel extends JFrame implements ActionListener{
         setLocation(350, 150);
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == fetchButton) {
+            String pnr = tfpnr.getText();
+            
+            try {
+                Conn conn = new Conn();
+
+                String query = "select * from reservation where PNR = '"+pnr+"'";
+
+                ResultSet rs = conn.s.executeQuery(query);
+                
+                if (rs.next()) {
+                    tfname.setText(rs.getString("name")); 
+                    lblfcode.setText(rs.getString("flightcode")); 
+                    lbldateoftravel.setText(rs.getString("ddate"));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please enter correct PNR");                
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (ae.getSource() == flight) {
+            String name = tfname.getText();
+            String pnr = tfpnr.getText();
+            String cancelno = cancellationno.getText();
+            String fcode = lblfcode.getText();
+            String date = lbldateoftravel.getText();
+            
+            try {
+                Conn conn = new Conn();
+
+                String query = "insert into cancel values('"+pnr+"', '"+name+"', '"+cancelno+"', '"+fcode+"', '"+date+"')";
+
+                conn.s.executeUpdate(query);
+                conn.s.executeUpdate("delete from reservation where PNR = '"+pnr+"'");
+                
+                JOptionPane.showMessageDialog(null, "Ticket Cancelled");
+                setVisible(false);
+            
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } 
+    }
