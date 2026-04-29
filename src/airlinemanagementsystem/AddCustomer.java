@@ -36,3 +36,21 @@ public class AddCustomer extends JFrame implements ActionListener{
         tfnationality = new JTextField();
         tfnationality.setBounds(220, 130, 150, 25);
         add(tfnationality);
+
+        JLabel lblaadhar = new JLabel("Aadhar Number");
+        lblaadhar.setBounds(60, 180, 150, 25);
+        lblaadhar.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblaadhar);
+        
+        tfaadhar = new JTextField();
+        tfaadhar.setBounds(220, 180, 150, 25);
+        add(tfaadhar);
+        
+        JLabel lbladdress = new JLabel("Address");
+        lbladdress.setBounds(60, 230, 150, 25);
+        lbladdress.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbladdress);
+        
+        tfaddress = new JTextField();
+        tfaddress.setBounds(220, 230, 150, 25);
+        add(tfaddress);
