@@ -40,3 +40,21 @@ public class BookFlight extends JFrame implements ActionListener{
         fetchButton.setBounds(380, 80, 120, 25);
         fetchButton.addActionListener(this);
         add(fetchButton);
+
+        JLabel lblname = new JLabel("Name");
+        lblname.setBounds(60, 130, 150, 25);
+        lblname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblname);
+        
+        tfname = new JLabel();
+        tfname.setBounds(220, 130, 150, 25);
+        add(tfname);
+        
+        JLabel lblnationality = new JLabel("Nationality");
+        lblnationality.setBounds(60, 180, 150, 25);
+        lblnationality.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblnationality);
+        
+        tfnationality = new JLabel();
+        tfnationality.setBounds(220, 180, 150, 25);
+        add(tfnationality);
