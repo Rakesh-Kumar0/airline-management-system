@@ -23,3 +23,17 @@ public class FlightInfo extends JFrame{
         } catch(Exception e) {
             e.printStackTrace();
         }
+
+        JScrollPane jsp = new JScrollPane(table);
+        jsp.setBounds(0, 0, 800, 500);
+        add(jsp);
+        
+        setSize(800, 500);
+        setLocation(400, 200);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new FlightInfo();
+    }
+}
