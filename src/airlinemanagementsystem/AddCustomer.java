@@ -74,3 +74,19 @@ public class AddCustomer extends JFrame implements ActionListener{
         
         gendergroup.add(rbmale);
         gendergroup.add(rbfemale);
+
+        JLabel lblphone = new JLabel("Phone");
+        lblphone.setBounds(60, 330, 150, 25);
+        lblphone.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblphone);
+        
+        tfphone = new JTextField();
+        tfphone.setBounds(220, 330, 150, 25);
+        add(tfphone);
+        
+        JButton save = new JButton("SAVE");
+        save.setBackground(Color.BLACK);
+        save.setForeground(Color.WHITE);
+        save.setBounds(220, 380, 150, 30);
+        save.addActionListener(this);
+        add(save);
