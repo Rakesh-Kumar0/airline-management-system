@@ -43,3 +43,24 @@ public class JourneyDetails extends JFrame implements ActionListener{
         setLocation(400, 150);
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae) {
+        try {
+            Conn conn = new Conn();
+            ResultSet rs = conn.s.executeQuery("select * from reservation where PNR = '"+pnr.getText()+"'");
+            
+            if (!rs.isBeforeFirst()) {
+                JOptionPane.showMessageDialog(null, "No Information Found");
+                return;
+            }
+            table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        new JourneyDetails();
+    }
+}
+
