@@ -60,3 +60,23 @@ public class Home extends JFrame implements ActionListener{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae) {
+        String text = ae.getActionCommand();
+        
+        if (text.equals("Add Customer Details")) {
+            new AddCustomer();
+        } 
+        else if (text.equals("Flight Details")) {
+            new FlightInfo();
+        }
+        else if (text.equals("Book Flight")) {
+            new BookFlight();
+        } else if (text.equals("Journey Details")) {
+            new JourneyDetails();
+        } else if (text.equals("Cancel Ticket")) {
+            new Cancel();
+        } else if (text.equals("Boarding Pass")) {
+            new BoardingPass();
+        }
+    }
