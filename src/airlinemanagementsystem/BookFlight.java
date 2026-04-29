@@ -58,3 +58,21 @@ public class BookFlight extends JFrame implements ActionListener{
         tfnationality = new JLabel();
         tfnationality.setBounds(220, 180, 150, 25);
         add(tfnationality);
+
+        JLabel lbladdress = new JLabel("Address");
+        lbladdress.setBounds(60, 230, 150, 25);
+        lbladdress.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbladdress);
+        
+        tfaddress = new JLabel();
+        tfaddress.setBounds(220, 230, 150, 25);
+        add(tfaddress);
+        
+        JLabel lblgender = new JLabel("Gender");
+        lblgender.setBounds(60, 280, 150, 25);
+        lblgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblgender);
+        
+        labelgender = new JLabel("Gender");
+        labelgender.setBounds(220, 280, 150, 25);
+        add(labelgender);
