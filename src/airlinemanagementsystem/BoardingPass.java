@@ -60,3 +60,21 @@ public class BoardingPass extends JFrame implements ActionListener{
         tfnationality = new JLabel();
         tfnationality.setBounds(220, 180, 150, 25);
         add(tfnationality);
+
+        JLabel lbladdress = new JLabel("SRC");
+        lbladdress.setBounds(60, 220, 150, 25);
+        lbladdress.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbladdress);
+        
+        lblsrc = new JLabel();
+        lblsrc.setBounds(220, 220, 150, 25);
+        add(lblsrc);
+        
+        JLabel lblgender = new JLabel("DEST");
+        lblgender.setBounds(380, 220, 150, 25);
+        lblgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblgender);
+        
+        lbldest = new JLabel();
+        lbldest.setBounds(540, 220, 150, 25);
+        add(lbldest);
