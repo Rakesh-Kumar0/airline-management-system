@@ -90,3 +90,15 @@ public class AddCustomer extends JFrame implements ActionListener{
         save.setBounds(220, 380, 150, 30);
         save.addActionListener(this);
         add(save);
+
+         
+        ImageIcon image = new ImageIcon(getClass().getResource("icons/emp.png"));
+        //ImageIcon i1 = new ImageIcon(getClass().getResource("icons/front.jpg"));
+        JLabel lblimage = new JLabel(image);
+        lblimage.setBounds(450, 80, 280, 400);
+        add(lblimage);
+        
+        setSize(900, 600);
+        setLocation(300, 150);
+        setVisible(true);
+    }
