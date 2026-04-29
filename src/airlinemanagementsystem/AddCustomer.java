@@ -54,3 +54,23 @@ public class AddCustomer extends JFrame implements ActionListener{
         tfaddress = new JTextField();
         tfaddress.setBounds(220, 230, 150, 25);
         add(tfaddress);
+
+        JLabel lblgender = new JLabel("Gender");
+        lblgender.setBounds(60, 280, 150, 25);
+        lblgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblgender);
+        
+        ButtonGroup gendergroup = new ButtonGroup();
+        
+        rbmale = new JRadioButton("Male");
+        rbmale.setBounds(220, 280, 70, 25);
+        rbmale.setBackground(Color.WHITE);
+        add(rbmale);
+        
+        rbfemale = new JRadioButton("Female");
+        rbfemale.setBounds(300, 280, 70, 25);
+        rbfemale.setBackground(Color.WHITE);
+        add(rbfemale);
+        
+        gendergroup.add(rbmale);
+        gendergroup.add(rbfemale);
