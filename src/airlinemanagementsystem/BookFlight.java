@@ -125,3 +125,21 @@ public class BookFlight extends JFrame implements ActionListener{
         labelfname = new JLabel();
         labelfname.setBounds(220, 430, 150, 25);
         add(labelfname);
+
+        JLabel lblfcode = new JLabel("Flight Code");
+        lblfcode.setBounds(60, 480, 150, 25);
+        lblfcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblfcode);
+        
+        labelfcode = new JLabel();
+        labelfcode.setBounds(220, 480, 150, 25);
+        add(labelfcode);
+        
+        JLabel lbldate = new JLabel("Date of Travel");
+        lbldate.setBounds(60, 530, 150, 25);
+        lbldate.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbldate);
+        
+        dcdate = new JDateChooser();
+        dcdate.setBounds(220, 530, 150, 25);
+        add(dcdate);
