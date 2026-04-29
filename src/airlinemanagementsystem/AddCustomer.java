@@ -102,3 +102,37 @@ public class AddCustomer extends JFrame implements ActionListener{
         setLocation(300, 150);
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae) {
+        String name = tfname.getText();
+        String nationality = tfnationality.getText();
+        String phone = tfphone.getText();
+        String address = tfaddress.getText();
+        String aadhar = tfaadhar.getText();
+        String gender = null;
+        if (rbmale.isSelected()) {
+            gender = "Male";
+        } else {
+            gender = "Female";
+        }
+        
+        try {
+            Conn conn = new Conn();
+            
+            String query = "insert into passenger values('"+name+"', '"+nationality+"', '"+phone+"', '"+address+"', '"+aadhar+"', '"+gender+"')";
+        
+            conn.s.executeUpdate(query);
+            
+            JOptionPane.showMessageDialog(null, "Customer Details Added Successfully");
+        
+            setVisible(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        new AddCustomer();
+    }
+}
+
