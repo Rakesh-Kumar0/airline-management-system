@@ -109,3 +109,19 @@ public class BookFlight extends JFrame implements ActionListener{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        flight = new JButton("Fetch Flights");
+        flight.setBackground(Color.BLACK);
+        flight.setForeground(Color.WHITE);
+        flight.setBounds(380, 380, 120, 25);
+        flight.addActionListener(this);
+        add(flight);
+        
+        JLabel lblfname = new JLabel("Flight Name");
+        lblfname.setBounds(60, 430, 150, 25);
+        lblfname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblfname);
+        
+        labelfname = new JLabel();
+        labelfname.setBounds(220, 430, 150, 25);
+        add(labelfname);
