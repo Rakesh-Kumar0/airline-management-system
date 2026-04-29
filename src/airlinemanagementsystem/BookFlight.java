@@ -76,3 +76,17 @@ public class BookFlight extends JFrame implements ActionListener{
         labelgender = new JLabel("Gender");
         labelgender.setBounds(220, 280, 150, 25);
         add(labelgender);
+
+        JLabel lblsource = new JLabel("Source");
+        lblsource.setBounds(60, 330, 150, 25);
+        lblsource.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblsource);
+        
+        source = new Choice();
+        source.setBounds(220, 330, 150, 25);       
+        add(source);
+        
+        JLabel lbldest = new JLabel("Destination");
+        lbldest.setBounds(60, 380, 150, 25);
+        lbldest.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbldest);
