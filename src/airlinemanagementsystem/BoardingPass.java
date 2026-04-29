@@ -117,3 +117,34 @@ public class BoardingPass extends JFrame implements ActionListener{
         setLocation(300, 150);
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae) {
+        String pnr = tfpnr.getText();
+
+        try {
+            Conn conn = new Conn();
+            
+            String query = "select * from reservation where PNR = '"+pnr+"'";
+            
+            ResultSet rs = conn.s.executeQuery(query);
+
+            if (rs.next()) {
+                tfname.setText(rs.getString("name")); 
+                tfnationality.setText(rs.getString("nationality")); 
+                lblsrc.setText(rs.getString("src")); 
+                lbldest.setText(rs.getString("des"));  
+                labelfname.setText(rs.getString("flightname"));  
+                labelfcode.setText(rs.getString("flightcode"));  
+                labeldate.setText(rs.getString("ddate")); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Please enter correct PNR");                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        new BoardingPass();
+    }
+}
