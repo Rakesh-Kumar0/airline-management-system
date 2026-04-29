@@ -26,3 +26,19 @@ public class BoardingPass extends JFrame implements ActionListener{
         subheading.setFont(new Font("Tahoma", Font.PLAIN, 24));
         subheading.setForeground(Color.BLUE);
         add(subheading);
+
+        JLabel lblaadhar = new JLabel("PNR DETAILS");
+        lblaadhar.setBounds(60, 100, 150, 25);
+        lblaadhar.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblaadhar);
+        
+        tfpnr = new JTextField();
+        tfpnr.setBounds(220, 100, 150, 25);
+        add(tfpnr);
+        
+        fetchButton = new JButton("Enter");
+        fetchButton.setBackground(Color.BLACK);
+        fetchButton.setForeground(Color.WHITE);
+        fetchButton.setBounds(380, 100, 120, 25);
+        fetchButton.addActionListener(this);
+        add(fetchButton);
