@@ -80,3 +80,9 @@ public class Home extends JFrame implements ActionListener{
             new BoardingPass();
         }
     }
+
+        public static void main(String[] args) {
+        new Home();
+    }
+
+}
