@@ -90,3 +90,22 @@ public class BookFlight extends JFrame implements ActionListener{
         lbldest.setBounds(60, 380, 150, 25);
         lbldest.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldest);
+
+         
+        destination = new Choice();
+        destination.setBounds(220, 380, 150, 25);       
+        add(destination);
+        
+        try {
+            Conn c = new Conn();
+            String query = "select * from flight";
+            ResultSet rs = c.s.executeQuery(query);
+            
+            while(rs.next()) {
+                source.add(rs.getString("source"));
+                destination.add(rs.getString("destination"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
