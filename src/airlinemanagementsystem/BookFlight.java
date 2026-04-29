@@ -162,3 +162,77 @@ public class BookFlight extends JFrame implements ActionListener{
         setLocation(200, 50);
         setVisible(true);
     }
+
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == fetchButton) {
+            String aadhar = tfaadhar.getText();
+            
+            try {
+                Conn conn = new Conn();
+
+                String query = "select * from passenger where aadhar = '"+aadhar+"'";
+
+                ResultSet rs = conn.s.executeQuery(query);
+                
+                if (rs.next()) {
+                    tfname.setText(rs.getString("name")); 
+                    tfnationality.setText(rs.getString("nationality")); 
+                    tfaddress.setText(rs.getString("address"));
+                    labelgender.setText(rs.getString("gender"));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please enter correct aadhar");                
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (ae.getSource() == flight) {
+            String src = source.getSelectedItem();
+            String dest = destination.getSelectedItem();
+            try {
+                Conn conn = new Conn();
+
+                String query = "select * from flight where source = '"+src+"' and destination = '"+dest+"'";
+
+                ResultSet rs = conn.s.executeQuery(query);
+                
+                if (rs.next()) {
+                    labelfname.setText(rs.getString("f_name")); 
+                    labelfcode.setText(rs.getString("f_code")); 
+                } else {
+                    JOptionPane.showMessageDialog(null, "No Flights Found");                
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Random random = new Random();
+            
+            String aadhar = tfaadhar.getText();
+            String name = tfname.getText(); 
+            String nationality = tfnationality.getText();
+            String flightname = labelfname.getText(); 
+            String flightcode = labelfcode.getText();
+            String src = source.getSelectedItem(); 
+            String des = destination.getSelectedItem();
+            String ddate = ((JTextField) dcdate.getDateEditor().getUiComponent()).getText();
+            
+            try {
+                Conn conn = new Conn();
+
+                String query = "insert into reservation values('PNR-"+random.nextInt(1000000)+"', 'TIC-"+random.nextInt(10000)+"', '"+aadhar+"', '"+name+"', '"+nationality+"', '"+flightname+"', '"+flightcode+"', '"+src+"', '"+des+"', '"+ddate+"')";
+
+                conn.s.executeUpdate(query);
+                
+                JOptionPane.showMessageDialog(null, "Ticket Booked Successfully");
+
+                setVisible(false);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new BookFlight();
+    }
+}
